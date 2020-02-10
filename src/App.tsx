@@ -1,8 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 // import logo from './logo.svg';
+import TextInput from './components/Input/TextInput';
+
 import './App.scss';
 
 const App: FunctionComponent = () => {
+  const [userInput, setUserInput] = useState('');
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    const { value } = event.target;
+    setUserInput(value);
+  };
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -19,6 +28,7 @@ const App: FunctionComponent = () => {
           Learn React
         </a>
       </header> */}
+      <TextInput name="input" onChange={handleChange} value={userInput} />
     </div>
   );
 };
