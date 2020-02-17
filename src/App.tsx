@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 // import logo from './logo.svg';
+import Button from './components/Input/Button';
 import TextInput from './components/Input/TextInput';
 
 import './App.scss';
@@ -29,6 +30,7 @@ const App: FunctionComponent = () => {
         </a>
       </header> */}
       <TextInput name="input" onChange={handleChange} value={userInput} />
+      <Button>TEST</Button>
     </div>
   );
 };
