@@ -30,7 +30,8 @@ const App: FunctionComponent = () => {
         </a>
       </header> */}
       <TextInput name="input" onChange={handleChange} value={userInput} />
-      <Button>TEST</Button>
+      <Button color="red">Red</Button>
+      <Button color="green">Green</Button>
     </div>
   );
 };

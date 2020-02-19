@@ -1,0 +1,33 @@
+$colors: (
+  red: #ED6B5A,
+  red-dark: darken(#ED6B5A, 5%),
+  green: #3AD886,
+  green-dark: darken(#3AD886, 5%)
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+.root {
+  font-weight: bold;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 5px;
+}
+
+.red-color {
+  background-color: color(red);
+
+  &:active {
+    background-color: color(red-dark);
+  }
+}
+
+.green-color {
+  background-color: color(green);
+
+  &:active {
+    background-color: color(green-dark);
+  }
+}
