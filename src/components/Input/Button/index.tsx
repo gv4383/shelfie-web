@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 
 interface Props {
   children: string;
@@ -8,11 +8,7 @@ interface Props {
 const Button: FunctionComponent<Props> = (props: Props) => {
   const { children, onClick } = props;
 
-  return (
-    <Fragment>
-      <button onClick={onClick}>{children}</button>
-    </Fragment>
-  );
+  return <button onClick={onClick}>{children}</button>;
 };
 
 export default Button;

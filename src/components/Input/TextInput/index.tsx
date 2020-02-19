@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Fragment, FunctionComponent } from 'react';
+import React, { ChangeEvent, FunctionComponent } from 'react';
 
 interface Props {
   formId?: string;
@@ -13,16 +13,14 @@ const TextInput: FunctionComponent<Props> = (props: Props) => {
   const { formId, name, onChange, placeholder, type = 'text', value } = props;
 
   return (
-    <Fragment>
-      <input
-        form={formId}
-        name={name}
-        onChange={onChange}
-        placeholder={placeholder}
-        type={type}
-        value={value}
-      />
-    </Fragment>
+    <input
+      form={formId}
+      name={name}
+      onChange={onChange}
+      placeholder={placeholder}
+      type={type}
+      value={value}
+    />
   );
 };
 
