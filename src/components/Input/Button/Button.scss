@@ -1,13 +1,4 @@
-$colors: (
-  red: #ED6B5A,
-  red-dark: darken(#ED6B5A, 5%),
-  green: #3AD886,
-  green-dark: darken(#3AD886, 5%)
-);
-
-@function color($color-name) {
-  @return map-get($colors, $color-name);
-}
+@import '../../../variables.scss';
 
 .base-button {
   font-weight: bold;
@@ -17,10 +8,10 @@ $colors: (
 }
 
 .red-color {
-  background-color: color(red);
+  background-color: $red-button;
 
   &:active {
-    background-color: color(red-dark);
+    background-color: $red-button-dark;
   }
 
   &:focus {
@@ -29,10 +20,10 @@ $colors: (
 }
 
 .green-color {
-  background-color: color(green);
+  background-color: $green-button;
 
   &:active {
-    background-color: color(green-dark);
+    background-color: $green-button-dark;
   }
 
   &:focus {
