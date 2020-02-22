@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
 // import logo from './logo.svg';
 import Button from './components/Input/Button';
+import ProductForm from './components/ProductForm';
 import TextInput from './components/Input/TextInput';
 
 import './App.scss';
@@ -32,6 +33,8 @@ const App: FunctionComponent = () => {
       <TextInput name="input" onChange={handleChange} value={userInput} />
       <Button color="red">Red</Button>
       <Button color="green">Green</Button>
+      <br />
+      <ProductForm />
     </div>
   );
 };
