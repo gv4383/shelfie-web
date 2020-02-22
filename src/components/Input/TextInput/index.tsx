@@ -18,7 +18,7 @@ const TextInput: FunctionComponent<Props> = (props: Props) => {
   const displayLabel = label && <p className="text-input-label">{label}</p>;
 
   return (
-    <div>
+    <div className="base-text-input">
       {displayLabel}
       <input
         form={formId}
