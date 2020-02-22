@@ -14,7 +14,7 @@ const Button: FunctionComponent<Props> = (props: Props) => {
   const getButtonColor = (): string => (color === 'red' ? 'red-color' : 'green-color');
 
   return (
-    <button className={`root ${getButtonColor()}`} onClick={onClick}>
+    <button className={`base-button ${getButtonColor()}`} onClick={onClick}>
       {children}
     </button>
   );

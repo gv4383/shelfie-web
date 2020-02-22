@@ -1,7 +1,10 @@
 import React, { ChangeEvent, FunctionComponent } from 'react';
 
+import './styles.scss';
+
 interface Props {
   formId?: string;
+  label?: string;
   name: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
@@ -10,17 +13,22 @@ interface Props {
 }
 
 const TextInput: FunctionComponent<Props> = (props: Props) => {
-  const { formId, name, onChange, placeholder, type = 'text', value } = props;
+  const { formId, label, name, onChange, placeholder, type = 'text', value } = props;
+
+  const displayLabel = label && <p className="text-input-label">{label}</p>;
 
   return (
-    <input
-      form={formId}
-      name={name}
-      onChange={onChange}
-      placeholder={placeholder}
-      type={type}
-      value={value}
-    />
+    <div>
+      {displayLabel}
+      <input
+        form={formId}
+        name={name}
+        onChange={onChange}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+      />
+    </div>
   );
 };
 

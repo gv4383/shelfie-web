@@ -2,8 +2,10 @@ import React, { FunctionComponent } from 'react';
 
 import Button from '../../Input/Button';
 
+import './styles.scss';
+
 const ActionBar: FunctionComponent = () => (
-  <div className="root">
+  <div className="base-action-bar">
     <Button color="red">Cancel</Button>
     <Button color="red">Save Changes</Button>
   </div>

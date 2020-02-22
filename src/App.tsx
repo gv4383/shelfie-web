@@ -30,7 +30,7 @@ const App: FunctionComponent = () => {
           Learn React
         </a>
       </header> */}
-      <TextInput name="input" onChange={handleChange} value={userInput} />
+      <TextInput label="TEST LABEL" name="input" onChange={handleChange} value={userInput} />
       <Button color="red">Red</Button>
       <Button color="green">Green</Button>
       <br />
