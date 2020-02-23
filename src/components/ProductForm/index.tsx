@@ -5,13 +5,20 @@ import TextInput from '../Input/TextInput';
 
 import './styles.scss';
 
-const ProductForm: FunctionComponent = () => {
+interface Props {
+  classNames?: string;
+}
+
+const ProductForm: FunctionComponent<Props> = (props: Props) => {
   const formInitialState = {
     imageUrl: '',
     productName: '',
     price: 0,
   };
   const [formInputs, setformInputs] = useState(formInitialState);
+  const { classNames } = props;
+
+  const getClassNames = (): string => `base-product-form ${classNames}`;
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
@@ -19,7 +26,7 @@ const ProductForm: FunctionComponent = () => {
   };
 
   const displayInputFields = (
-    <div className="base-product-form">
+    <div className="product-form-input-container">
       <TextInput
         label="Image URL"
         name="imageUrl"
@@ -43,7 +50,7 @@ const ProductForm: FunctionComponent = () => {
   );
 
   return (
-    <div>
+    <div className={getClassNames()}>
       {displayInputFields}
       <ActionBar />
     </div>

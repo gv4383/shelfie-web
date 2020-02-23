@@ -1,5 +1,12 @@
-.base-product-form {
+@import '../../variables';
+
+.product-form-input-container {
   width: 100%;
-  border: 1px solid red;
+}
+
+.base-product-form {
+  background-color: $green-button;
   border-radius: 5px;
+  padding: 15px;
+  max-width: 250px;
 }
