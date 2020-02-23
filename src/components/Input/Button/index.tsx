@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import './Button.scss';
+import './styles.scss';
 
 interface Props {
   children: string;
