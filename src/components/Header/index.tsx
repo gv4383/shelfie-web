@@ -6,7 +6,7 @@ import './styles.scss';
 
 const Navbar: FunctionComponent = () => (
   <div className="navbar-container">
-    <img className="nav-logo" src={logo} />
+    <img className="nav-logo" alt="Shelfie Logo" src={logo} />
     <h2 className="nav-title">SHELFIE</h2>
   </div>
 );
