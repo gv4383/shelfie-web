@@ -6,15 +6,17 @@ import './styles.scss';
 
 interface Props {
   buttonColor: 'red' | 'green';
+  leftButtonText: string;
+  rightButtonText: string;
 }
 
 const ActionBar: FunctionComponent<Props> = (props: Props) => {
-  const { buttonColor } = props;
+  const { buttonColor, leftButtonText, rightButtonText } = props;
 
   return (
     <div className="base-action-bar">
-      <Button color={buttonColor}>Cancel</Button>
-      <Button color={buttonColor}>Save Changes</Button>
+      <Button color={buttonColor}>{leftButtonText}</Button>
+      <Button color={buttonColor}>{rightButtonText}</Button>
     </div>
   );
 };

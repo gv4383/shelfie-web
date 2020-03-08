@@ -52,7 +52,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   return (
     <div className={getClassNames()}>
       {displayInputFields}
-      <ActionBar buttonColor="red" />
+      <ActionBar buttonColor="red" leftButtonText="Cancel" rightButtonText="Add to Inventory" />
     </div>
   );
 };
