@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 // import logo from './logo.svg';
 import Navbar from './components/Header';
 import Dashboard from './views/Dashboard';
-import ProductForm from './components/ProductForm';
+import AddProduct from './views/AddProduct';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ const App: FunctionComponent = () => (
       <Navbar />
     </header>
     <Dashboard />
-    <ProductForm />
+    <AddProduct />
   </div>
 );
 
