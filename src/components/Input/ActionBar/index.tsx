@@ -4,11 +4,19 @@ import Button from '../../Input/Button';
 
 import './styles.scss';
 
-const ActionBar: FunctionComponent = () => (
-  <div className="base-action-bar">
-    <Button color="red">Cancel</Button>
-    <Button color="red">Save Changes</Button>
-  </div>
-);
+interface Props {
+  buttonColor: 'red' | 'green';
+}
+
+const ActionBar: FunctionComponent<Props> = (props: Props) => {
+  const { buttonColor } = props;
+
+  return (
+    <div className="base-action-bar">
+      <Button color={buttonColor}>Cancel</Button>
+      <Button color={buttonColor}>Save Changes</Button>
+    </div>
+  );
+};
 
 export default ActionBar;
