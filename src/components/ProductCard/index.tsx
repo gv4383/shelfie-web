@@ -12,11 +12,21 @@ interface Props {
 const ProductCard: FunctionComponent<Props> = (props: Props) => {
   const { name, price } = props;
 
+  const handleLeftOnClick = (): void => console.log('Delete');
+
+  const handleRightOnClick = (): void => console.log('Edit');
+
   return (
     <div className="base-product-card">
       <p>{name}</p>
       <p>{`$${price}`}</p>
-      <ActionBar buttonColor="green" leftButtonText="Delete" rightButtonText="Edit" />
+      <ActionBar
+        buttonColor="green"
+        leftButtonText="Delete"
+        onClickLeft={handleLeftOnClick}
+        onClickRight={handleRightOnClick}
+        rightButtonText="Edit"
+      />
     </div>
   );
 };

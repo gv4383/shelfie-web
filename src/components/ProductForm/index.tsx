@@ -25,6 +25,10 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     setformInputs({ ...formInputs, [name]: value });
   };
 
+  const handleLeftOnClick = (): void => console.log('Cancel');
+
+  const handleRightOnClick = (): void => console.log('Add to Inventory');
+
   const displayInputFields = (
     <div className="product-form-input-container">
       <TextInput
@@ -52,7 +56,13 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   return (
     <div className={getClassNames()}>
       {displayInputFields}
-      <ActionBar buttonColor="red" leftButtonText="Cancel" rightButtonText="Add to Inventory" />
+      <ActionBar
+        buttonColor="red"
+        leftButtonText="Cancel"
+        onClickLeft={handleLeftOnClick}
+        onClickRight={handleRightOnClick}
+        rightButtonText="Add to Inventory"
+      />
     </div>
   );
 };
