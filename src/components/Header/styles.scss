@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.navbar-container {
+  background-color: $red-nav;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.nav-logo {
+  height: 48px;
+  margin-left: 56px;
+  margin-right: 24px;
+  width: 48px;
+}
+
+.nav-title {
+  color: white;
+}
