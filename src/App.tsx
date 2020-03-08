@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
+import { HashRouter } from 'react-router-dom';
+
 // import logo from './logo.svg';
 import Navbar from './components/Header';
-import Dashboard from './views/Dashboard';
-import AddProduct from './views/AddProduct';
+import Routes from './components/Routes';
 
 import './App.scss';
 
@@ -11,8 +12,9 @@ const App: FunctionComponent = () => (
     <header>
       <Navbar />
     </header>
-    <Dashboard />
-    <AddProduct />
+    <HashRouter>
+      <Routes />
+    </HashRouter>
   </div>
 );
 
