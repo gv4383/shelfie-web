@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 // import logo from './logo.svg';
 import Navbar from './components/Header';
+import Dashboard from './views/Dashboard';
 import ProductForm from './components/ProductForm';
-import ProductCard from './components/ProductCard';
 
 import './App.scss';
 
@@ -11,7 +11,7 @@ const App: FunctionComponent = () => (
     <header>
       <Navbar />
     </header>
-    <ProductCard name="Stanky Shoe" price={1.29} />
+    <Dashboard />
     <ProductForm />
   </div>
 );
