@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { HashRouter } from 'react-router-dom';
 
-// import logo from './logo.svg';
 import Navbar from './components/Header';
 import Routes from './components/Routes';
 
