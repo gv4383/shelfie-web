@@ -4,10 +4,10 @@ import ProductForm from '../../components/ProductForm';
 
 import './styles.scss';
 
-const AddProduct: FunctionComponent = () => (
-  <div className="add-product-container">
+const AddEditProduct: FunctionComponent = () => (
+  <div className="add-edit-product-container">
     <ProductForm />
   </div>
 );
 
-export default AddProduct;
+export default AddEditProduct;
