@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { HashRouter } from 'react-router-dom';
 
-import Navbar from './components/Header';
+import Header from './components/Header';
 import Routes from './components/Routes';
 
 import './App.scss';
@@ -9,7 +9,7 @@ import './App.scss';
 const App: FunctionComponent = () => (
   <div className="App">
     <header>
-      <Navbar />
+      <Header />
     </header>
     <HashRouter>
       <Routes />
