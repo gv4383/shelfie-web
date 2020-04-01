@@ -8,10 +8,10 @@ import './App.scss';
 
 const App: FunctionComponent = () => (
   <div className="App">
-    <header>
-      <Header />
-    </header>
     <HashRouter>
+      <header>
+        <Header />
+      </header>
       <Routes />
     </HashRouter>
   </div>
