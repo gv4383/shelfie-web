@@ -1,13 +1,25 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import axios from 'axios';
 
 import ProductCard from '../../components/ProductCard';
+import { Product } from '../../types';
 
 import './styles.scss';
 
-const Dashboard: FunctionComponent = () => (
-  <div className="dashboard-container">
-    <ProductCard name="Stanky Shoe" price={1.29} />
-  </div>
-);
+const Dashboard: FunctionComponent = () => {
+  const [inventory, setInventory] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/api/inventory').then(({ data }) => setInventory(data));
+  }, []);
+
+  const displayInventory = inventory.map((product: Product) => {
+    const { id, name, price } = product;
+
+    return <ProductCard key={id} name={name} price={price} />;
+  });
+
+  return <div className="dashboard-container">{displayInventory}</div>;
+};
 
 export default Dashboard;
