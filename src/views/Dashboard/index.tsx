@@ -16,7 +16,9 @@ const Dashboard: FunctionComponent = () => {
   const displayInventory = inventory.map((product: Product) => {
     const { id, name, price } = product;
 
-    return <ProductCard key={id} name={name} price={price} />;
+    return (
+      <ProductCard key={id} productId={id} name={name} price={price} setInventory={setInventory} />
+    );
   });
 
   return <div className="dashboard-container">{displayInventory}</div>;
