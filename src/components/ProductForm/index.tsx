@@ -5,10 +5,11 @@ import TextInput from '../Input/TextInput';
 import { Product } from '../../types';
 
 import './styles.scss';
-
 interface Props {
   classNames?: string;
   product?: Product | null;
+  productId?: string;
+  url: string;
 }
 
 const ProductForm: FunctionComponent<Props> = (props: Props) => {
@@ -18,18 +19,20 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     price: 0,
   };
   const [formInputs, setformInputs] = useState(formInitialState);
-  const { classNames, product } = props;
+  const { classNames, product, url } = props;
 
   useEffect(() => {
-    if (product) {
+    if (url.includes('edit') && product) {
       const { name, price } = product;
       setformInputs({
         imageUrl: '',
         productName: name,
         price: price,
       });
+    } else {
+      setformInputs(formInitialState);
     }
-  }, [product]);
+  }, [product, url]);
 
   const getClassNames = (): string => `base-product-form ${classNames}`;
 

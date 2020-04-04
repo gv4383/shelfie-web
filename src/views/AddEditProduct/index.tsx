@@ -4,15 +4,13 @@ import axios from 'axios';
 import ProductForm from '../../components/ProductForm';
 
 import './styles.scss';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface Props {
-  match: {
-    url: string;
-    params: {
-      id?: number;
-    };
-  };
+interface MatchParams {
+  id: string;
 }
+
+type Props = RouteComponentProps<MatchParams>;
 
 const AddEditProduct: FunctionComponent<Props> = (props: Props) => {
   const {
@@ -34,7 +32,7 @@ const AddEditProduct: FunctionComponent<Props> = (props: Props) => {
 
   return (
     <div className="add-edit-product-container">
-      <ProductForm product={product} />
+      <ProductForm product={product} productId={productId} url={url} />
     </div>
   );
 };
