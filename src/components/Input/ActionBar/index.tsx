@@ -7,6 +7,7 @@ import './styles.scss';
 
 interface Props {
   buttonColor: 'red' | 'green';
+  isAddOrEditCard?: boolean;
   isRightButtonLink?: boolean;
   leftButtonText: string;
   onClickLeft: () => void;
@@ -18,6 +19,7 @@ interface Props {
 const ActionBar: FunctionComponent<Props> = (props: Props) => {
   const {
     buttonColor,
+    isAddOrEditCard,
     isRightButtonLink,
     leftButtonText,
     onClickLeft,
@@ -25,6 +27,16 @@ const ActionBar: FunctionComponent<Props> = (props: Props) => {
     productId,
     rightButtonText,
   } = props;
+
+  const displayLeftButton = isAddOrEditCard ? (
+    <Link to="/">
+      <Button color={buttonColor}>{leftButtonText}</Button>
+    </Link>
+  ) : (
+    <Button color={buttonColor} onClick={onClickLeft}>
+      {leftButtonText}
+    </Button>
+  );
 
   const displayRightButton = isRightButtonLink ? (
     <Link to={`/edit/${productId}`}>
@@ -40,9 +52,7 @@ const ActionBar: FunctionComponent<Props> = (props: Props) => {
 
   return (
     <div className="base-action-bar">
-      <Button color={buttonColor} onClick={onClickLeft}>
-        {leftButtonText}
-      </Button>
+      {displayLeftButton}
       {displayRightButton}
     </div>
   );

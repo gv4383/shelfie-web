@@ -74,6 +74,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
       {displayInputFields}
       <ActionBar
         buttonColor="red"
+        isAddOrEditCard
         leftButtonText="Cancel"
         onClickLeft={handleLeftOnClick}
         onClickRight={handleRightOnClick}
