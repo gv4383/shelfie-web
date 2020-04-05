@@ -21,8 +21,11 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   const [formInputs, setformInputs] = useState(formInitialState);
   const { classNames, product, url } = props;
 
+  const isEditPage = url.includes('edit');
+  const rightButtonText = isEditPage ? 'Save Changes' : 'Add to Inventory';
+
   useEffect(() => {
-    if (url.includes('edit') && product) {
+    if (isEditPage && product) {
       const { name, price } = product;
       setformInputs({
         imageUrl: '',
@@ -32,7 +35,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     } else {
       setformInputs(formInitialState);
     }
-  }, [product, url]);
+  }, [isEditPage, product]);
 
   const getClassNames = (): string => `base-product-form ${classNames}`;
 
@@ -78,7 +81,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
         leftButtonText="Cancel"
         onClickLeft={handleLeftOnClick}
         onClickRight={handleRightOnClick}
-        rightButtonText="Add to Inventory"
+        rightButtonText={rightButtonText}
       />
     </div>
   );
