@@ -29,7 +29,6 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
       <p>{`$${price}`}</p>
       <ActionBar
         buttonColor="green"
-        isRightButtonLink={true}
         leftButtonText="Delete"
         onClickLeft={handleLeftOnClick}
         productId={productId}

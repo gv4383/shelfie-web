@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FunctionComponent, useState, useEffect } from 'react';
+import axios from 'axios';
 
 import ActionBar from '../Input/ActionBar';
 import TextInput from '../Input/TextInput';
@@ -19,7 +20,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     price: 0,
   };
   const [formInputs, setformInputs] = useState(formInitialState);
-  const { classNames, product, url } = props;
+  const { classNames, product, productId, url } = props;
 
   const isEditPage = url.includes('edit');
   const rightButtonText = isEditPage ? 'Save Changes' : 'Add to Inventory';
@@ -44,9 +45,13 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     setformInputs({ ...formInputs, [name]: value });
   };
 
-  const handleLeftOnClick = (): void => console.log('Cancel');
-
-  const handleRightOnClick = (): void => console.log('Add to Inventory');
+  const handleSubmit = (): void => {
+    // axios.post('http://localhost:5000/api/product', {
+    //   name: formInputs.productName,
+    //   price: formInputs.price,
+    // });
+    console.log('Click!');
+  };
 
   const displayInputFields = (
     <div className="product-form-input-container">
@@ -79,8 +84,8 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
         buttonColor="red"
         isAddOrEditCard
         leftButtonText="Cancel"
-        onClickLeft={handleLeftOnClick}
-        onClickRight={handleRightOnClick}
+        onClickRight={handleSubmit}
+        productId={Number(productId)}
         rightButtonText={rightButtonText}
       />
     </div>
