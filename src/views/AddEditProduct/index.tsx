@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import axios from 'axios';
+import { RouteComponentProps } from 'react-router-dom';
 
 import ProductForm from '../../components/ProductForm';
 
 import './styles.scss';
-import { RouteComponentProps } from 'react-router-dom';
 
 interface MatchParams {
   id: string;
