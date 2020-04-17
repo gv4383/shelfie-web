@@ -46,10 +46,10 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   };
 
   const handleSubmit = (): void => {
-    // axios.post('http://localhost:5000/api/product', {
-    //   name: formInputs.productName,
-    //   price: formInputs.price,
-    // });
+    axios.post('http://localhost:5000/api/product', {
+      name: formInputs.productName,
+      price: formInputs.price,
+    });
     console.log('Click!');
   };
 
