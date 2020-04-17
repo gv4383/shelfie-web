@@ -46,12 +46,21 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   };
 
   const handleSubmit = (): void => {
-    axios
-      .post('http://localhost:5000/api/product', {
-        name: formInputs.productName,
-        price: formInputs.price,
-      })
-      .then(() => setformInputs(formInitialState));
+    if (url.includes('/edit')) {
+      axios
+        .put(`http://localhost:5000/api/product/${productId}`, {
+          name: formInputs.productName,
+          price: formInputs.price,
+        })
+        .then(() => setformInputs(formInitialState));
+    } else if (url.includes('/add')) {
+      axios
+        .post('http://localhost:5000/api/product', {
+          name: formInputs.productName,
+          price: formInputs.price,
+        })
+        .then(() => setformInputs(formInitialState));
+    }
   };
 
   const displayInputFields = (
