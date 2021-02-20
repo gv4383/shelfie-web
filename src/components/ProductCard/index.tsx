@@ -17,7 +17,7 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
 
   const handleLeftOnClick = (): void => {
     axios
-      .delete(`http://localhost:5000/api/product/${productId}`)
+      .delete(`http://localhost:5000/api/products/${productId}`)
       .then(() =>
         axios.get('http://localhost:5000/api/inventory').then(({ data }) => setInventory(data)),
       );

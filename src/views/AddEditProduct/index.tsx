@@ -25,7 +25,7 @@ const AddEditProduct: FunctionComponent<Props> = (props: Props) => {
   useEffect(() => {
     if (url.includes('edit')) {
       axios
-        .get(`http://localhost:5000/api/product/${productId}`)
+        .get(`http://localhost:5000/api/products/${productId}`)
         .then(({ data }) => getProduct(data));
     }
   }, [productId, url]);

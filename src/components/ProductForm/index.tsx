@@ -48,14 +48,14 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
   const handleSubmit = (): void => {
     if (url.includes('/edit')) {
       axios
-        .put(`http://localhost:5000/api/product/${productId}`, {
+        .put(`http://localhost:5000/api/products/${productId}`, {
           name: formInputs.productName,
           price: formInputs.price,
         })
         .then(() => setformInputs(formInitialState));
     } else if (url.includes('/add')) {
       axios
-        .post('http://localhost:5000/api/product', {
+        .post('http://localhost:5000/api/products', {
           name: formInputs.productName,
           price: formInputs.price,
         })
