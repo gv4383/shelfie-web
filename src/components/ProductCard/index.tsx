@@ -26,15 +26,24 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
 
   return (
     <div className="base-product-card">
-      <p>{name}</p>
-      <p>{`$${price}`}</p>
-      <ActionBar
-        buttonColor="green"
-        leftButtonText="Delete"
-        onClickLeft={handleLeftOnClick}
-        productId={productId}
-        rightButtonText="Edit"
-      />
+      <div>
+        <img className="product-card-image" src={imageUrl} alt={name} />
+      </div>
+      <div>
+        <div className="product-card-info">
+          <div>
+            <p>{name}</p>
+            <p>{`$${price}`}</p>
+          </div>
+          <ActionBar
+            buttonColor="green"
+            leftButtonText="Delete"
+            onClickLeft={handleLeftOnClick}
+            productId={productId}
+            rightButtonText="Edit"
+          />
+        </div>
+      </div>
     </div>
   );
 };
