@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import ProductCard from '../../components/ProductCard';
 import { Product } from '../../types';
+import { formatFetchedInventory } from '../../utils/api';
 
 import './styles.scss';
 
@@ -13,17 +14,26 @@ const Dashboard: FunctionComponent<Props> = (props: Props) => {
   const {
     location: { pathname },
   } = props;
-  const [inventory, setInventory] = useState([]);
+  const [inventory, setInventory] = useState([] as Product[]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/inventory').then(({ data }) => setInventory(data));
+    axios
+      .get('http://localhost:5000/api/inventory')
+      .then(({ data }) => setInventory(formatFetchedInventory(data)));
   }, [pathname]);
 
   const displayInventory = inventory.map((product: Product) => {
-    const { id, name, price } = product;
+    const { id, imageUrl, name, price } = product;
 
     return (
-      <ProductCard key={id} productId={id} name={name} price={price} setInventory={setInventory} />
+      <ProductCard
+        key={id}
+        imageUrl={imageUrl}
+        productId={id}
+        name={name}
+        price={price}
+        setInventory={setInventory}
+      />
     );
   });
 

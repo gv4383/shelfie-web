@@ -6,6 +6,7 @@ import ActionBar from '../Input/ActionBar';
 import './styles.scss';
 
 interface Props {
+  imageUrl: string;
   productId: number;
   name: string;
   price: number;
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const ProductCard: FunctionComponent<Props> = (props: Props) => {
-  const { productId, name, price, setInventory } = props;
+  const { imageUrl, name, productId, price, setInventory } = props;
 
   const handleLeftOnClick = (): void => {
     axios
