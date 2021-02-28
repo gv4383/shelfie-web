@@ -3,6 +3,8 @@ import axios from 'axios';
 import { RouteComponentProps } from 'react-router-dom';
 
 import ProductForm from '../../components/ProductForm';
+import { Product } from '../../types';
+import { formatFetchedProduct } from '../../utils/api';
 
 import './styles.scss';
 
@@ -20,13 +22,13 @@ const AddEditProduct: FunctionComponent<Props> = (props: Props) => {
     },
   } = props;
 
-  const [product, getProduct] = useState(null);
+  const [product, setProduct] = useState({} as Product);
 
   useEffect(() => {
     if (url.includes('edit')) {
       axios
         .get(`http://localhost:5000/api/products/${productId}`)
-        .then(({ data }) => getProduct(data));
+        .then(({ data }) => setProduct(formatFetchedProduct(data)));
     }
   }, [productId, url]);
 

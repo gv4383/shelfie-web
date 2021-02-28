@@ -27,9 +27,9 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
 
   useEffect(() => {
     if (isEditPage && product) {
-      const { name, price } = product;
+      const { imageUrl, name, price } = product;
       setformInputs({
-        imageUrl: '',
+        imageUrl,
         productName: name,
         price: price,
       });
@@ -62,6 +62,10 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
         .then(() => setformInputs(formInitialState));
     }
   };
+
+  // const displayProductImage = isEditPage && (
+  //   <img src={} alt={} />
+  // );
 
   const displayInputFields = (
     <div className="product-form-input-container">
