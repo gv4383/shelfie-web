@@ -63,12 +63,13 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     }
   };
 
-  // const displayProductImage = isEditPage && (
-  //   <img src={} alt={} />
-  // );
+  const displayProductImage = isEditPage && product && (
+    <img className="product-form-image" src={product.imageUrl} alt={product.name} />
+  );
 
   const displayInputFields = (
     <div className="product-form-input-container">
+      {displayProductImage}
       <TextInput
         label="Image URL"
         name="imageUrl"
