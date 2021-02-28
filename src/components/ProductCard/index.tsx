@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import axios from 'axios';
 
 import ActionBar from '../Input/ActionBar';
+import { formatFetchedInventory } from '../../utils/api';
 
 import './styles.scss';
 
@@ -20,7 +21,9 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
     axios
       .delete(`http://localhost:5000/api/products/${productId}`)
       .then(() =>
-        axios.get('http://localhost:5000/api/inventory').then(({ data }) => setInventory(data)),
+        axios
+          .get('http://localhost:5000/api/inventory')
+          .then(({ data }) => setInventory(formatFetchedInventory(data))),
       );
   };
 
