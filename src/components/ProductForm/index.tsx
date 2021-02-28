@@ -49,6 +49,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     if (url.includes('/edit')) {
       axios
         .put(`http://localhost:5000/api/products/${productId}`, {
+          image_url: formInputs.imageUrl,
           name: formInputs.productName,
           price: formInputs.price,
         })
@@ -56,6 +57,7 @@ const ProductForm: FunctionComponent<Props> = (props: Props) => {
     } else if (url.includes('/add')) {
       axios
         .post('http://localhost:5000/api/products', {
+          image_url: formInputs.imageUrl,
           name: formInputs.productName,
           price: formInputs.price,
         })
